@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese GoGo - Learn Mandarin Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .menu-toggle:hover {
+            background-color: #f3f4f6;
+        }
+
+        .course-card {
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+
+        .button-primary {
+            background-color: #dc2626;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .button-primary:hover {
+            background-color: #b91c1c;
+        }
+
+        .button-secondary {
+            border: 2px solid #dc2626;
+            color: #dc2626;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .button-secondary:hover {
+            background-color: #fef2f2;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold text-red-600">Chinese GoGo</div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 transition">Home</a>
+                    <a href="#courses" class="text-gray-700 hover:text-red-600 transition">Courses</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-red-600 transition">Pricing</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-600 transition">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-600 transition">Contact</a>
+                    <button class="button-primary">Login</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden menu-toggle p-2 rounded" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden pb-4 space-y-2 hidden">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-red-600">Home</a>
+                <a href="#courses" class="block py-2 text-gray-700 hover:text-red-600">Courses</a>
+                <a href="#pricing" class="block py-2 text-gray-700 hover:text-red-600">Pricing</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-red-600">About</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-red-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Learn Chinese the <span class="text-red-600">Fun Way</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Master Mandarin from absolute beginner to advanced with engaging video lessons, interactive quizzes, and real-world practice.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <button class="button-primary">Start Free Course</button>
+                <button class="button-secondary">View All Courses</button>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-red-600 mb-2">10K+</div>
+                    <div class="text-gray-600">Students</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-red-600 mb-2">500+</div>
+                    <div class="text-gray-600">Video Lessons</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-red-600 mb-2">6</div>
+                    <div class="text-gray-600">HSK Levels</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-red-600 mb-2">95%</div>
+                    <div class="text-gray-600">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bundled Courses -->
+    <section id="courses" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">Bundled Courses</h2>
+            <p class="text-center text-gray-600 mb-12">Get lifetime access to all course materials</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Ultimate Bundle -->
+                <div class="course-card border border-gray-200 rounded-lg p-8">
+                    <div class="bg-gray-200 h-48 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500">Course Cover</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Ultimate Bundle</h3>
+                    <p class="text-gray-600 mb-6">Master Mandarin from beginner to advanced with lifetime access to all our courses, materials, and updates.</p>
+                    <button class="w-full button-primary">Enroll Now</button>
+                </div>
+
+                <!-- HSK 1-4 Bundle -->
+                <div class="course-card border border-gray-200 rounded-lg p-8">
+                    <div class="bg-gray-200 h-48 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500">Course Cover</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">HSK 1-4 Bundle</h3>
+                    <p class="text-gray-600 mb-6">Perfect for beginners to intermediate learners building up toward everyday fluency and practical communication.</p>
+                    <button class="w-full button-primary">Enroll Now</button>
+                </div>
+
+                <!-- HSK 5-6 Bundle -->
+                <div class="course-card border border-gray-200 rounded-lg p-8">
+                    <div class="bg-gray-200 h-48 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500">Course Cover</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">HSK 5-6 Bundle</h3>
+                    <p class="text-gray-600 mb-6">Designed for advanced learners aiming to reach professional fluency and master complex topics in Chinese.</p>
+                    <button class="w-full button-primary">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- Individual Courses -->
+            <h3 class="text-3xl font-bold mb-8">...or buy each course individually</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="course-card border border-gray-200 rounded-lg p-6">
+                    <div class="bg-gray-200 h-32 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500 text-sm">Course Cover</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">HSK 1 Beginner Course</h4>
+                    <button class="w-full button-secondary">Learn More</button>
+                </div>
+
+                <div class="course-card border border-gray-200 rounded-lg p-6">
+                    <div class="bg-gray-200 h-32 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500 text-sm">Course Cover</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">HSK 2 Upper Beginner Course</h4>
+                    <button class="w-full button-secondary">Learn More</button>
+                </div>
+
+                <div class="course-card border border-gray-200 rounded-lg p-6">
+                    <div class="bg-gray-200 h-32 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500 text-sm">Course Cover</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">HSK 3 Intermediate Course</h4>
+                    <button class="w-full button-secondary">Learn More</button>
+                </div>
+
+                <div class="course-card border border-gray-200 rounded-lg p-6">
+                    <div class="bg-gray-200 h-32 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500 text-sm">Course Cover</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">HSK 4 Upper Intermediate</h4>
+                    <button class="w-full button-secondary">Learn More</button>
+                </div>
+
+                <div class="course-card border border-gray-200 rounded-lg p-6">
+                    <div class="bg-gray-200 h-32 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500 text-sm">Course Cover</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">HSK 5 Advanced Course</h4>
+                    <button class="w-full button-secondary">Learn More</button>
+                </div>
+
+                <div class="course-card border border-gray-200 rounded-lg p-6">
+                    <div class="bg-gray-200 h-32 rounded mb-4 flex items-center justify-center">
+                        <span class="text-gray-500 text-sm">Course Cover</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3">HSK 6 Advanced Course</h4>
+                    <button class="w-full button-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Courses -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-12">Free Courses</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2">Introduction to Chinese</h3>
+                    <p class="text-gray-600 mb-4">Learn the 100 most essential words through engaging TV drama scenes</p>
+                    <button class="text-red-600 font-semibold hover:text-red-700">Enroll Free →</button>
+                </div>
+
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2">Pronunciation Course</h3>
+                    <p class="text-gray-600 mb-4">Master pinyin and Mandarin phonetics from the ground up</p>
+                    <button class="text-red-600 font-semibold hover:text-red-700">Enroll Free →</button>
+                </div>
+
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2">Slow Chinese Listening</h3>
+                    <p class="text-gray-600 mb-4">Supplement your textbook learning with real-world Chinese listening</p>
+                    <button class="text-red-600 font-semibold hover:text-red-700">Enroll Free →</button>
+                </div>
+
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2">Learn Chinese with Songs</h3>
+                    <p class="text-gray-600 mb-4">Explore and learn popular Chinese songs while improving listening skills</p>
+                    <button class="text-red-600 font-semibold hover:text-red-700">Enroll Free →</button>
+                </div>
+
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2">Learn Chinese with Poems</h3>
+                    <p class="text-gray-600 mb-4">Master famous Tang Dynasty poems and understand Chinese classical literature</p>
+                    <button class="text-red-600 font-semibold hover:text-red-700">Enroll Free →</button>
+                </div>
+
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2">Chinese Grammar Essentials</h3>
+                    <p class="text-gray-600 mb-4">Understand the core grammar structures that power everyday Chinese</p>
+                    <button class="text-red-600 font-semibold hover:text-red-700">Enroll Free →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+            <p class="text-gray-600 mb-12">All courses include lifetime access and lifetime updates</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="rounded-lg p-8 border-2 border-gray-200 bg-white">
+                    <h3 class="text-2xl font-bold mb-2">Individual Course</h3>
+                    <p class="text-gray-600 mb-6">Single HSK level course</p>
+                    <div class="text-5xl font-bold text-red-600 mb-8">$35</div>
+                    <button class="w-full button-secondary">Get Started</button>
+                </div>
+
+                <div class="rounded-lg p-8 border-2 border-gray-200 bg-white">
+                    <h3 class="text-2xl font-bold mb-2">Beginner Bundle</h3>
+                    <p class="text-gray-600 mb-6">HSK 1-4 all courses</p>
+                    <div class="text-5xl font-bold text-red-600 mb-8">$120</div>
+                    <button class="w-full button-secondary">Get Started</button>
+                </div>
+
+                <div class="rounded-lg p-8 border-2 border-red-600 bg-red-50">
+                    <h3 class="text-2xl font-bold mb-2">Ultimate Bundle</h3>
+                    <p class="text-gray-600 mb-6">HSK 1-6 + all extras</p>
+                    <div class="text-5xl font-bold text-red-600 mb-8">$250</div>
+                    <button class="w-full button-primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Success Stories -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Student Success Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <p class="text-gray-700 mb-4 italic">"Used Chinese GoGo as the foundation of my study process. Completed 18 lessons in 25 days and improved my HSK score by 65 points!"</p>
+                    <div class="border-t pt-4">
+                        <div class="font-semibold text-gray-900">Dmitry V.</div>
+                        <div class="text-red-600 text-sm">HSK 5: 262/300</div>
+                    </div>
+                </div>
+
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <p class="text-gray-700 mb-4 italic">"Started studying Chinese 8 months ago. The detailed videos helped me reach advanced level Chinese in less than a year."</p>
+                    <div class="border-t pt-4">
+                        <div class="font-semibold text-gray-900">Sarhata</div>
+                        <div class="text-red-600 text-sm">HSK 4: 287/300</div>
+                    </div>
+                </div>
+
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <p class="text-gray-700 mb-4 italic">"Feeling lost with my Chinese studies until I found Chinese GoGo. Now I feel confident with grammar and listening skills."</p>
+                    <div class="border-t pt-4">
+                        <div class="font-semibold text-gray-900">Carla G.</div>
+                        <div class="text-red-600 text-sm">HSK 3: 296/300</div>
+                    </div>
+                </div>
+
+                <div class="course-card bg-white rounded-lg p-6 border border-gray-200">
+                    <p class="text-gray-700 mb-4 italic">"The videos are succinct yet thorough, and very funny! Learning Chinese has become so much more enjoyable."</p>
+                    <div class="border-t pt-4">
+                        <div class="font-semibold text-gray-900">Jonathan T.</div>
+                        <div class="text-red-600 text-sm">HSK 2: 200/200</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section-padding bg-white">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-4">Get Your Free Study Guide</h2>
+            <p class="text-gray-600 mb-8">
+                Feeling lost with no guidance? Unlock our 16-page PDF guide packed with level-by-level roadmaps, time estimates, key resources, and strategies to reach fluency.
+            </p>
+            
+            <form onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3">
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    id="emailInput"
+                    class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600"
+                    required
+                />
+                <button
+                    type="submit"
+                    class="button-primary whitespace-nowrap"
+                >
+                    Get Free Guide
+                </button>
+            </form>
+            
+            <p id="successMessage" class="text-green-600 mt-4 hidden">Thank you! Check your email for the free guide.</p>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12">Follow Us</h2>
+            <p class="text-gray-600 mb-8 text-lg">
+                Join our community on social media for daily Chinese learning tips, culture insights, and language motivation.
+            </p>
+            
+            <div class="flex justify-center gap-8 flex-wrap mb-12">
+                <a href="https://tiktok.com/@chinesegogo6" class="flex items-center gap-2 text-gray-700 hover:text-red-600 transition">
+                    <span class="font-semibold">🎬 @chinesegogo6</span>
+                </a>
+                <a href="https://youtube.com/@chinesegogo" class="flex items-center gap-2 text-gray-700 hover:text-red-600 transition">
+                    <span class="font-semibold">▶ @chinesegogo</span>
+                </a>
+            </div>
+
+            <p class="text-gray-600 text-sm mb-8">
+                Coming soon: Facebook and Instagram. Subscribe to stay updated!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-semibold mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#courses" class="hover:text-white transition">Courses</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Free Courses</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Follow</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://tiktok.com/@chinesegogo6" class="hover:text-white transition">TikTok</a></li>
+                        <li><a href="https://youtube.com/@chinesegogo" class="hover:text-white transition">YouTube</a></li>
+                        <li><a href="mailto:sampsonxichen@gmail.com" class="hover:text-white transition">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Chinese GoGo. All rights reserved. Master Mandarin, Have Fun Doing It.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('emailInput');
+            const successMessage = document.getElementById('successMessage');
+            
+            if (emailInput.value) {
+                successMessage.classList.remove('hidden');
+                emailInput.value = '';
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 3000);
+            }
+        }
+    </script>
+
+</body>
+</html>
